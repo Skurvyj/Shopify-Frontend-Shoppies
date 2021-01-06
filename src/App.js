@@ -8,8 +8,8 @@ function App() {
       <div>
         <Switch>
           <Route exact path= "/" component = {Home}/>
-          <Route path= "/nominations" component = {Nomination}/>
-          <Route path = "/thankyou" component = {Thankyou}/>
+          <Route exact path= "/nominations" component = {Nomination}/>
+          <Route exact path = "/thankyou" component = {Thankyou}/>
         </Switch>
      </div>
     </BrowserRouter>
