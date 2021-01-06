@@ -4,7 +4,7 @@ import Thankyou from "./components/Thankyou";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={`${process.env.PUBLIC_URL}/`}>
       <div>
         <Switch>
           <Route exact path= "/" component = {Home}/>
