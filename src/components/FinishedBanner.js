@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledWrapper = styled.div`
+//styling for the banner wrapper
+const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,7 +16,8 @@ const StyledWrapper = styled.div`
     border-radius: 10px;
 `;
 
-const StyledSubmitButton = styled.button`
+//styling for the submit button
+const SubmitButton = styled.button`
     font-size: 14px;
     cursor: pointer;
     background: #d6efc7;
@@ -29,26 +31,29 @@ const StyledSubmitButton = styled.button`
     }
     &:hover{
         opacity: 0.8;
+        transform: scale(1.02);
     } 
     &:active{
-        transform: scale(1.02);
+        transform: scale(1.04);
     }
 `;
 
-const StyledH3 = styled.h3`
+//styling for the info text
+const InfoText = styled.h3`
     font-size: 16px;
 `;
 
-
+//banner to appear when user has nominated five movies
 const finished = (props) => {
+    //quick little function to send the user to the thank you page
     const goToThankYou = () => {
         window.location.assign('/thankyou')
     }
     return (
-        <StyledWrapper>
-            <StyledH3>Awesome, you've selected five movies! Click the button below to submit your nominations. </StyledH3>
-            <StyledSubmitButton onClick = {goToThankYou}> Submit </StyledSubmitButton>  
-        </StyledWrapper>
+        <Wrapper>
+            <InfoText>Awesome, you've selected five movies! Click the button below to submit your nominations. </InfoText>
+            <SubmitButton onClick = {goToThankYou}> Submit </SubmitButton>  
+        </Wrapper>
     );
 };
 

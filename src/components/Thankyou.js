@@ -1,7 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledLayout = styled.div`
+
+//layout centers everything
+const Layout = styled.div`
     display: grid;
     place-items: center;
     color: white;
@@ -9,20 +11,22 @@ const StyledLayout = styled.div`
     font-family: aftetir;
 `;
 
-const StyledContainer = styled.div`
+//contains all the page text
+const Container = styled.div`
     display: grid;
     place-items: center;
 `;
 
-const StyledShoppies = styled.h1`
+//thank you text
+const Shoppies = styled.h1`
     color: #184d47;
     font-size: 70px;
     text-align: center;
     max-width: 70%;
 `
 
-
-const StyledInfo = styled.p`
+//info text
+const Info = styled.p`
     font-size: 40px;
     text-wrap: wrap;
     text-align: center;
@@ -31,12 +35,12 @@ const StyledInfo = styled.p`
 
 const thankyou = (props) => {
     return (
-        <StyledLayout>
-            <StyledContainer>
-                <StyledShoppies>Thank you for particpating in The Shoppies!</StyledShoppies>
-                <StyledInfo> Be sure to tune in and see if your selections win! </StyledInfo>
-            </StyledContainer>
-        </StyledLayout>
+        <Layout>
+            <Container>
+                <Shoppies>Thank you for participating in The Shoppies!</Shoppies>
+                <Info> Be sure to tune in and see if your selections win! </Info>
+            </Container>
+        </Layout>
     );
 };
 
