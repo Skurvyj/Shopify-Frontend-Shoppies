@@ -1,3 +1,8 @@
 html{
-  background-color: #96BF48;
+  background-color: #96bb7c;
+}
+
+@font-face{
+  font-family: aftetir;
+  src: url(fonts/Aftetir.woff) format('woff');
 }

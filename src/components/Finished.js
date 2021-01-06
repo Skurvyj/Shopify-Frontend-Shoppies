@@ -1,8 +1,7 @@
 import React from "react";
-import axios from "axios";
 import styled from "styled-components";
 
-const StyledLayout = styled.div`
+const StyledWrapper = styled.div`
     display: grid;
     place-items: center;
     color: white;
@@ -35,20 +34,14 @@ const StyledStartButton = styled.button`
 `;
 
 
-const homepage = (props) => {
-    const goToNominationPage = () => {
-        window.location.assign('/nominations')
-    }
+const thankyou = (props) => {
     return (
-        <StyledLayout>
-            <StyledContainer>
-                <h1>Welcome to the Shoppies</h1>
-                <h2>Presented by Shopify</h2>
-                <p>Nominate your five favorite movies of all time!</p>
-                <StyledStartButton onClick = {goToNominationPage} >Get Started</StyledStartButton>
-            </StyledContainer>
-        </StyledLayout>
+        <StyledWrapper>
+            <h1>Welcome to the Shoppies</h1>
+            <h2>Presented by Shopify</h2>
+            <p>Nominate your five favorite movies of all time!</p>   
+        </StyledWrapper>
     );
 };
 
-export default homepage;
+export default thankyou;
