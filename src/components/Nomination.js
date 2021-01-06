@@ -138,7 +138,7 @@ const Nomination = (props) => {
     };
 
     const handleSearchTermChange = () => {
-        axios.get(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&type=movie&s=${searchTerm}`
+        axios.get(`https://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&type=movie&s=${searchTerm}`
         ).then(function(response){
             if(response.data.Search !== undefined){
                 setSearchResults(response.data.Search)
