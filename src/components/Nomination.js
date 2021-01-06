@@ -1,18 +1,23 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
+import FinishedBanner from"./FinishedBanner";
 
 const StyledLayout = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 95vw;
+    width: 100%;
     height: 95vh;
     color: white;
     font-family: aftetir;
+    min-width: 50%;
 `;
 
 const StyledContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
    
 `;
 
@@ -34,8 +39,6 @@ const StyledInput = styled.input`
     }
 `;
 
-const StyledLabel = styled.label`
-`;
 
 const StyledLowerRow = styled.div`
     display: flex;
@@ -54,6 +57,7 @@ const StyledContentBox = styled.div`
     min-width: 300px;
     min-height: 300px;
     text-align: center;
+    margin: 5px;
     
 `;
 
@@ -70,13 +74,15 @@ const StyledSearchResult = styled.div`
     display: flex;
     flex-direction: row;
     margin: 5px;
-    font-size: 14px;
+    font-size: 16px;
+    animation: 
 `;
 
 const StyledResultButton = styled.button`
-    font-size: 14px;
+    font-size: 16px;
     background: #d6efc7;
     font-family: aftetir;
+    cursor: pointer;
     border-radius: 5px;
     margin-left: 6px;
     max-height: 40px;
@@ -89,11 +95,36 @@ const StyledResultButton = styled.button`
     &:disabled{
         color: #999b84;
     }
+    &:hover{
+        opacity: 0.8;
+    } 
+    &:active{
+        transform: scale(1.02);
+    }
 `;
 
 const StyledShoppies = styled.h1`
     color: #184d47;
 `;
+
+const StyledBanner  = styled.div`
+    position: relative;
+    top: 20px;
+`;
+
+const StyledInstructions = styled.p`
+    position: relative;
+    top: 20px;
+    font-size: 16px;
+    color: #184d47;
+`;
+
+const StyledResultsHeader = styled.h3`
+    max-width: 80%;
+    min-height: 5%;
+    overflow: hidden;
+`;
+
 
 
 const Nomination = (props) => {
@@ -159,7 +190,7 @@ const Nomination = (props) => {
     return (
             <StyledLayout>
                 <StyledContainer>
-                    <StyledShoppies> The Shoppies </StyledShoppies>
+                    <StyledShoppies> The Shoppies - Brought to You by Shopify </StyledShoppies>
                     <StyledSearchBar className = "search-bar">
                         <StyledInput id = "title" 
                                      type = "text" 
@@ -170,7 +201,7 @@ const Nomination = (props) => {
                     </StyledSearchBar>
                     <StyledLowerRow>
                         <StyledContentBox>
-                            <h3>Results for {searchTerm}</h3>
+                            <StyledResultsHeader>Results for {searchTerm}</StyledResultsHeader>
                             <StyledResultBox className = "results-display"> 
                                 {searchResultsDisplay}
                             </StyledResultBox>
@@ -183,6 +214,13 @@ const Nomination = (props) => {
                             </StyledResultBox>
                         </StyledContentBox>
                     </StyledLowerRow>
+                    {finished ? 
+                    <StyledBanner>
+                        <FinishedBanner>
+                        </FinishedBanner>
+                    </StyledBanner>
+                    : <StyledInstructions> Search for and select five movies to nominate for The Shoppies!</StyledInstructions>}
+                    
                 </StyledContainer>
             </StyledLayout>
     );

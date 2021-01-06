@@ -5,7 +5,7 @@ const StyledLayout = styled.div`
     display: grid;
     place-items: center;
     color: white;
-    height: 100vh;
+    height: 95vh;
     font-family: aftetir;
 `;
 
@@ -14,33 +14,27 @@ const StyledContainer = styled.div`
     place-items: center;
 `;
 
-const StyledStartButton = styled.button`
-    font-size: 14px;
-    background: #d6efc7;
-    font-family: aftetir;
-    border-radius: 5px;
-    height: 40px;
-    align-self: center;
-    border-style: none;
-    &:focus{
-        outline: none;
-    }
-    &:hover{
-        opacity: 0.8;
-    } 
-    &:active{
-        transform: scale(1.02);
-    }
-`;
+const StyledShoppies = styled.h1`
+    color: #184d47;
+    font-size: 70px;
+    text-align: center;
+    max-width: 70%;
+`
 
+
+const StyledInfo = styled.p`
+    font-size: 40px;
+    text-wrap: wrap;
+    text-align: center;
+    max-width: 70%;
+`
 
 const thankyou = (props) => {
     return (
         <StyledLayout>
             <StyledContainer>
-                <h1>Welcome to the Shoppies</h1>
-                <h2>Presented by Shopify</h2>
-                <p>Nominate your five favorite movies of all time!</p>
+                <StyledShoppies>Thank you for particpating in The Shoppies!</StyledShoppies>
+                <StyledInfo> Be sure to tune in and see if your selections win! </StyledInfo>
             </StyledContainer>
         </StyledLayout>
     );
