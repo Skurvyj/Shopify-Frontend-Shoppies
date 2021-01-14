@@ -1,4 +1,5 @@
 # The Shoppies
+IMPORTANT: If the Heroku app says failed to load the first time, refresh the page and it should be there. <br/>
 A simple web app where you can nominate 5 movies for a fictional awards show, The Shoppies. <br/>
 Built for the Shopify Frontend Intern Challenge <br/>
 Hosted on Heroku at: https://shoppies-mccauley.herokuapp.com
